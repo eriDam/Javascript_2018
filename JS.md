@@ -10,22 +10,26 @@ Libraries are collections of methods that can be called without an instance.
 You can write single-line comments with // and multi-line comments between /* and */.
 
 
-## vars
+## Vars
 
-` // This line of code sets the variable location to the string New York City
-const location = 'New York City';`
+```javascript
+// This line of code sets the variable location to the string New York City
+const location = 'New York City';
 
-`// This line of code sets the variable latitude to the number 40.7
-let latitude = 40.7;`
+// This line of code sets the variable latitude to the number 40.7
+let latitude = 40.7;
 
-`// This line of code sets the variable inNorthernHemisphere to true
-let inNorthernHemisphere = true;`
+// This line of code sets the variable inNorthernHemisphere to true
+let inNorthernHemisphere = true;
 
-`console.log(location);
+console.log(location);
 console.log(latitude);
-console.log(inNorthernHemisphere); `
+console.log(inNorthernHemisphere); 
+```
 
 ## operators
+
+```javascript
 let molecule = 16;
 let particle = 18;
 let assay = 3;
@@ -39,6 +43,7 @@ particle *= 6.02;
 
 // Increment assay by 1
 assay++;
+```
 
 ## String Interpolation
 
@@ -48,9 +53,12 @@ The JavaScript term for inserting the data saved to a variable into a string is 
 
 The + operator, known until now as the addition operator, is used to interpolate (insert) a string variable into a string, as follows:
 
+```javascript
 let myPet = 'armadillo';
 console.log('I own a pet ' + myPet + '.'); 
 // Output: 'I own a pet armadillo.'
+```
+
 In the example above, we saved the value 'armadillo' to the myPet variable. On the second line, the + operator is used to combine three strings: I own a pet, the value saved to myPet, and .. We log the result of this interpolation to the console as:
 
 I own a pet armadillo.
@@ -65,6 +73,7 @@ ES6 string interpolation is easier than the method you used last exercise. With 
 
 It looks like this:
 
+```javascript
 let myPet = 'armadillo'
 console.log(`I own a pet ${myPet}.`)
 // Output: 'I own a pet armadillo.'
@@ -75,19 +84,24 @@ I own a pet armadillo.
 let myName  = 'Erika';
 let myCity = 'Valencia';
 console.log(`My name is ${myName}. My favorite city is ${myCity}.`)
+```
+
 
 ### Programa que convierte los grados Kelvin en Fahrenheit
-`// Temperatura en Kelvin
-const kelvin = 294;`
-`// Los celsius son 273 menos los kelvin
-let celsius = (kelvin - 273);`
-`let fahrenheit =  celsius * (9/5) + 32;
+
+```javascript
+// Temperatura en Kelvin
+const kelvin = 294;
+// Los celsius son 273 menos los kelvin
+let celsius = (kelvin - 273);
+let fahrenheit =  celsius * (9/5) + 32;
 console.log(fahrenheit);
 // Round fahrenheit`
-`console.log(Math.floor(fahrenheit));
+console.log(Math.floor(fahrenheit));
 // save round in var
 fahrenheit = Math.floor(fahrenheit);
-console.log(`The temperature is ${fahrenheit} defrees Fahrenheit`);`
+console.log(`The temperature is ${fahrenheit} defrees Fahrenheit`);
+
 
 
 // Temperatura en Kelvin
@@ -105,7 +119,7 @@ console.log(`The temperature is ${fahrenheit} degrees Fahrenheit`);
 let newton = celsius * (33/100);
 newton = Math.floor(newton);
 console.log(`The temperature is ${newton} degrees newton`)
-
+```
 ## Control flow
 
 let userName = 'Erika';
@@ -224,15 +238,17 @@ else if is limited, however. If we want to write a program with 25 different con
 To deal with times when you need many else if conditions, we can turn to a switch statement to write more concise and readable code.
 
 To a computer, a switch statement and an if/else statement are the same, but a switch statement can be easier for other humans to read. Part of being a good developer is writing code that both computers and other humans can read.
-
+​```javascript
 switch statements look like this:
 
 let groceryItem = 'papaya';
 
 switch (groceryItem) {
   case 'tomato':
-    console.log('Tomatoes are $0.49');
-    break;
+​```javascript
+console.log('Tomatoes are $0.49');
+break;
+```
   case 'lime':
     console.log('Limes are $1.49');
     break;
@@ -328,11 +344,11 @@ In main.js, refactor the third if/else block to use the ternary operator.
 `let isLocked = false;`
 
 `isLocked ? console.log('You will need a key to open the door.') : console.log('You will not need a key to open the door.');`
- 
+
 `let isCorrect = true;`
 
 `isCorrect ? console.log('Correct!') : console.log('Incorrect!');`
- 
+
 
 `let favoritePhrase = 'Love That!';`
 
@@ -803,3 +819,10 @@ const myNightSky = () => {
 
 console.log(myNightSky()); 
 console.log(stars);
+
+
+```
+
+```
+
+```

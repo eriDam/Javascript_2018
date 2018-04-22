@@ -122,6 +122,7 @@ console.log(`The temperature is ${newton} degrees newton`)
 ```
 ## Control flow
 
+```javascript
 let userName = 'Erika';
 let knowsJavaScript = true;
 
@@ -133,10 +134,12 @@ if (knowsJavaScript && userName) {
   console.log('Great, ' + userName + '! Get ready to learn something new!');
 } else {
   console.log('Great! Get ready to learn something new!');
-}
+};
+```
 
 ## True and false values
 
+```javascript
 let wordCount = 1;
 
 if (wordCount) {
@@ -160,12 +163,15 @@ if(hungerLevel > 7){
 }else{
   console.log('We can eat later!');
 };
+``` 
 
-## else if Statements
+
+## Else if Statements
+
 We've explored if/else statements that answer questions that are either yes or no. What can we do if we have a question that has multiple yes conditions, or multiple no conditions?
 
 We can add more conditions to our if/else statement with else if. Check out how this fits into our current knowledge of if/else statements:
-
+```javascript
 let stopLight = 'green';
 
 if (stopLight === 'red') {
@@ -176,13 +182,17 @@ if (stopLight === 'red') {
   console.log('Go!');
 } else {
   console.log('Caution, unknown!');
-}
+};
+
+```
+
 1. We created a variable named stopLight that is assigned to the string green.
 
 2. Then, there's an if/else statement with multiple conditions, using else if. else if allows us to check multiple values of the stopLight variable and output different things based on its color.
 
 3. The block ends with the singular else we have seen before. The else is a catch-all for any other situation. For instance, if the stopLight was blinking blue, the last else would catch it and return a default message.
 
+```javascript
 let moonPhase = 'solar eclipse';
 
 if (moonPhase === 'full') {
@@ -194,8 +204,11 @@ if (moonPhase === 'full') {
 } else {
   console.log('Invalid moon phase');
 }
+``` 
 
-## and && y or || 
+## And && y Or || 
+
+```javascript
 let moonPhase = 'full';
 let isFoggyNight = false;
 
@@ -208,9 +221,9 @@ if (moonPhase === 'full' && isFoggyNight) {
 } else {
   console.log('Invalid moon phase');
 }
-
+``` 
 -------------
-
+```javascript
 let moonPhase = 'full';
 let isFoggyNight = false;
 
@@ -223,8 +236,8 @@ if (moonPhase === 'full' || isFoggyNight) {
 } else {
   console.log('Invalid moon phase');
 }
-
-----------------
+``` 
+ 
 
 ## switch Statements
 
@@ -238,17 +251,17 @@ else if is limited, however. If we want to write a program with 25 different con
 To deal with times when you need many else if conditions, we can turn to a switch statement to write more concise and readable code.
 
 To a computer, a switch statement and an if/else statement are the same, but a switch statement can be easier for other humans to read. Part of being a good developer is writing code that both computers and other humans can read.
-​```javascript
+```javascript
 switch statements look like this:
 
 let groceryItem = 'papaya';
 
 switch (groceryItem) {
   case 'tomato':
-​```javascript
+ 
 console.log('Tomatoes are $0.49');
 break;
-```
+ 
   case 'lime':
     console.log('Limes are $1.49');
     break;
@@ -258,7 +271,9 @@ break;
   default:
     console.log('Invalid item');
     break;
-}
+};
+```
+
 The switch keyword initiates the statement and is followed by ( ... ), which contains the condition that each case will compare to. In the example, the condition is groceryItem.
 Inside the block, { ... }, there are cases. case is like the else if part of an if/else if/else statement. The word following the first case is 'tomato'. If groceryItem equalled 'tomato', that case's console.log() would run.
 groceryItem equals 'papaya', so the first and second case statements are skipped. The third case runs since the case is 'papaya', which matches groceryItem's value. This particular program will log Papayas are $1.29.
@@ -284,10 +299,10 @@ Remember to add a break after each console.log(), like in the example in the ins
 
 3.
 Now, add a default at the end of the switch that uses console.log() to print Invalid moon phase, in the case that moonPhase does not equal one of our cases.
+```javascript
+ let moonPhase = 'full'; 
 
-`let moonPhase = 'full';`
-
-`switch (moonPhase) {
+ switch (moonPhase) {
   case 'full':
     console.log('Howl!');
     break;
@@ -300,7 +315,8 @@ Now, add a default at the end of the switch that uses console.log() to print Inv
   default:
     console.log('Invalid moon phase');
     break;
-}`
+}
+``` 
 
 
 
@@ -310,7 +326,7 @@ Now, add a default at the end of the switch that uses console.log() to print Inv
 
 
 In the previous exercise, we learned shorthand for writing multiple if/else if/else statements to make them easier to read. JavaScript also provides a way to shorten simple if/else statements called the ternary operator.
-
+```javascript
 let isNightTime = true;
 
 if (isNightTime) {
@@ -321,6 +337,9 @@ if (isNightTime) {
 In the example above, we see a very familiar pattern. See the example below for an equivalent way to express this.
 
 isNightTime ? console.log('Turn on the lights!') : console.log('Turn off the lights!');
+
+```
+
 The code in the example above will operate exactly as the code from the previous example. Let's break this example into its parts:
 
 isNightTime ? — the conditional statement followed by a question mark. This checks if isNightTime is truthy.
@@ -341,19 +360,20 @@ In main.js, refactor the second if/else block to use the ternary operator.
 3.
 In main.js, refactor the third if/else block to use the ternary operator. 
 
-`let isLocked = false;`
+```javascript
+ let isLocked = false;
 
-`isLocked ? console.log('You will need a key to open the door.') : console.log('You will not need a key to open the door.');`
+isLocked ? console.log('You will need a key to open the door.') : console.log('You will not need a key to open the door.');
 
-`let isCorrect = true;`
+let isCorrect = true;
 
-`isCorrect ? console.log('Correct!') : console.log('Incorrect!');`
+isCorrect ? console.log('Correct!') : console.log('Incorrect!');
 
 
-`let favoritePhrase = 'Love That!';`
+let favoritePhrase = 'Love That!';
 
-`favoritePhrase === 'Love That!' ? console.log('I love that!') : console.log("I don't love that!");`
-
+favoritePhrase === 'Love That!' ? console.log('I love that!') : console.log("I don't love that!");
+```
 
 ## Review: Control Flow
 
@@ -378,7 +398,7 @@ Three equals symbols (===) are used to check if two variables are equal to each 
 ## FUNCTIONS
 
 How does this code work?
-
+```javascript
 let calculatorIsOn = false;
 
 const pressPowerButton = () => {
@@ -396,6 +416,8 @@ pressPowerButton();
 
 pressPowerButton();
 // Output: Calculator turning off.
+```
+
 Let's explore each part in detail.
 
 1. We created a function named pressPowerButton.
@@ -425,13 +447,14 @@ Call the takeOrder() function on the last line.
 
 ## Parameters
 So far our function has not required any input. We can also write functions that accept data. We do this with parameters. Parameters are variables in a function definition that represent data we can input into the function.
-
+```javascript
 const multiplyByThirteen = (inputNumber) => {
   console.log(inputNumber * 13);
 };
 
 multiplyByThirteen(9);
 // Output: 117
+```
 Let's explore how this function works:
 
 We add inputNumber within the parentheses () => of the multiplyByThirteen function. inputNumber is a parameter.

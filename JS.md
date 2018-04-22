@@ -843,9 +843,350 @@ const myNightSky = () => {
 console.log(myNightSky()); 
 console.log(stars);
 
+## Block Scope
 
-```
+Because of the challenges with global scope, it is preferable to define variables in block scope.
 
-```
+A block refers to the {} braces of a function, a loop, or an if statement, and serves as an important structural marker for our code. Block scope means that a variable defined in the block is only accessible within the curly braces.
 
-```
+Block scope works like this:
+
+const colorOfSky = () => {
+  let color = 'blue'; 
+  console.log(color); // blue 
+};
+
+colorOfSky(); // blue 
+console.log(color); // undefined
+You'll notice:
+
+We define a function colorOfSky().
+Within the function, the color variable is only available within the curly braces of the function.
+If we try to log the same variable outside the function, it logs undefined.
+1.
+In light.js, using const, define a function visibleLightWaves().
+
+2.
+Within the visibleLightWaves() function, using let, create a variable lightWaves and set it equal to 'Moonlight'.
+
+3.
+Within the function, beneath the lightWaves variable, add a console.log() statement that will log the value of the lightWaves variable when the function runs.
+
+4.
+Call the visibleLightWaves() function from outside the function.
+
+5.
+Beneath the function call, log the value of lightWaves to the console from outside the function.
+
+You'll notice that it logs a ReferenceError since the variable is tied to the block scope of the function!
+
+const visibleLightWaves = () => {
+  let lightWaves = 'Moonlight';
+  console.log(lightWaves);
+};
+
+visibleLightWaves();
+console.log(lightWaves);
+
+## Block Scope II
+
+Let's take a look at another example of block scope, as defined within an if block:
+
+const colorOfSky = () => {
+  const dusk = true;
+  let color = 'blue'; 
+  if (dusk) {
+    let color = 'pink';
+    console.log(color); // pink
+  }
+  console.log(color); // blue 
+};
+
+colorOfSky(); // blue
+console.log(color); // undefined
+Here, you'll notice:
+
+We create a variable dusk inside the colorOfSky() function.
+After the if statement, we define a new code block with the {} braces. Here we assign a new value to the variable color if the if statement is true.
+Within the if block, the color variable holds the value pink, though outside the if block, in the function body, the color variable holds the value blue.
+Block scope is a powerful tool in JavaScript, since it allows us to define variables with precision, and not pollute the global namespace.
+
+Instructions
+1.
+Remove the statement that erroneously logs the value of the lightWaves variable to the console outside of the function block.
+
+2.
+Let's continue by adding another variable to the visibleLightWaves() function. Beneath the lightWaves variable, using let, add a variable region and set it equal to 'The Arctic'.
+
+3.
+Beneath the region variable, create an if statement that checks if the region is the 'The Arctic'.
+
+4.
+Inside the if block, define a new variable lightWaves and set it equal to 'Northern Lights'.
+
+5.
+Beneath the variable in the if block, use console.log() to log the value of the block variable inside the if block.
+
+Notice the ouput. Inside the if block console.log(lightWaves) logs the value Northern Lights to the console. Outside the if block, but still within the function, the same statement logs Moonlight to the console.
+
+const visibleLightWaves = () => {
+  let lightWaves = 'Moonlight';
+  let region = 'The Arctic';
+    if (region === 'The Arctic') {
+      let lightWaves = 'Northern Lights';
+      console.log(lightWaves);  
+    }
+  console.log(lightWaves);
+};
+
+visibleLightWaves();
+
+## Block Scope III
+
+Let's take a look at one other common example of block scope, as defined within a for loop.
+
+const cloudCount = () => {
+  let i = 2;
+  console.log(i); // 2
+  for (let i = 0; i < 10; i++) {
+    console.log(i); // All numbers from 0 to 9
+  }
+};
+
+cloudCount();
+console.log(i); // undefined
+Here the variable i is defined in the cloudCount() function.
+Within the for loop block, we again define i, as a value that will be incremented.
+The local value of i, whether defined in the function block or the for loop, has no impact on the global scope of our program.
+Instructions
+1.
+Using const, declare a new function called starCount().
+
+2.
+Within the starCount() function, declare a variable named i and set it equal to 5.
+
+3.
+Right beneath the variable declaration, log the value of the i value to the console.
+
+4.
+Beneath the previous console.log() statement, create a for loop.
+
+The for loop should begin counting when i = 0, as long as i < 12, and increment the value i by 1 each time the loop runs.
+
+Within the block of the for loop, log the value of i to the console, as demonstrated in the example.
+
+5.
+Call starCount() function, from outside of the function.
+
+6.
+Finally, beneath the function call, log the value of i to the console from outside of the function.
+
+You will notice that it returns a Reference Error! The value of i is contained in the block scope.
+
+const starCount = () => {
+  let i = 5;
+  console.log(i); // 25
+  for (let i = 0; i < 12; i++) {
+    console.log(i); // All numbers from 0 to 9
+  }
+ 
+};
+starCount();
+ console.log(i);
+
+ ## Review: Scope
+This unit introduced you to scope.
+
+Scope is the idea in programming that some variables are accessible/inaccessible from other parts of the program.
+Global Scope refers to variables that are accessible to every part of the program.
+Block Scope refers to variables that are accessible only within the block they are defined.
+
+## Arrays
+A foundational concept of programming is how to organize and store data.
+
+One way we organize data in real life is to make lists. Let's make one here:
+
+New Year's Resolutions:
+1. Rappel into a cave
+2. Take a falconry class
+3. Learn to juggle
+Let's now write this list in JavaScript, as an array:
+
+let newYearsResolutions = ['Rappel into a cave', 'Take a falconry class', 'Learn to juggle'];
+Arrays are JavaScript's way of making lists. These lists can store any data types (including strings, numbers, and booleans) and they are ordered, meaning each item has a numbered position.
+
+Instructions
+1.
+Run the code to see what is logged to the console.
+
+let bucketList = ['Rappel into a cave', 'Take a falconry class', 'Learn to juggle'];
+
+console.log(bucketList);
+
+## Create an array
+Let's start by making an array and then seeing what it can do throughout the rest of this lesson.
+
+Instructions
+1.
+Make a variable named newYearsResolutions and set it equal to an array with three strings inside of it.
+
+
+2.
+Use console.log to print newYearsResolutions to the screen.
+
+let newYearsResolutions  = ['Rappel into a cave', 'Take a falconry class', 'Learn to juggle'];
+console.log(newYearsResolutions);
+
+### ARRAYS
+## Property Access
+
+Each item in an array has a numbered position. We can access individual items using their numbers, just like we would in an ordinary list.
+
+Something important to note is that JavaScript starts counting from 0 rather than 1, so the first item in an array will be at position 0. This is because JavaScript is zero-indexed.
+
+We can select the first item in an array like this:
+
+let newYearsResolutions = ['Rappel into a cave', 'Take a falconry class', 'Learn to juggle'];
+
+console.log(newYearsResolutions[0]);
+// Output: 'Rappel into a cave'
+You can also access individual characters in a string. For instance, you can write:
+
+let hello = 'Hello World';
+console.log(hello[6]);
+// Output: W
+W will be the output since it's the character in the 6th position. This works because JavaScript stores strings in a similar way that it stores arrays.
+
+Instructions
+1.
+Individual elements of arrays can also be stored to variables.
+
+Create a variable named listItem and set it equal to the first item in your newYearsResolutions array using square bracket notation ([]).
+
+Then use console.log() to print the listItem variable to the console.
+
+The first item within an array is always at position [0].
+
+2.
+Now, console.log() the third item in the newYearsResolutions array without using a variable.
+
+3.
+Try to log the item at position [3] to the console. What is logged to the console?
+
+let newYearsResolutions  = ['Rappel into a cave', 'Take a falconry class', 'Learn to juggle'];
+console.log(newYearsResolutions);
+
+let listItem = newYearsResolutions[0];
+console.log(listItem);
+console.log(newYearsResolutions[2]);
+console.log(newYearsResolutions[3]);
+
+### ARRAYS
+## Update Elements
+In the previous exercise, you learned how to access elements of an array or a string using their index number. You can also change elements of an array using their indices.
+
+let seasons = ["Winter", "Spring", "Summer", "Fall"];
+
+seasons[3] = "Autumn";
+console.log(seasons) 
+//Output: 
+//Winter 
+//Spring
+//Summer
+//Autumn
+In the example above, the seasons array contained the names of the four seasons.
+
+However, we decided that we preferred to say "Autumn" instead of "Fall".
+
+seasons[3] = "Autumn"; tells our program to change the item at index 3 of the seasons array to be "Autumn" instead of what is already there.
+
+Instructions
+1.
+Change the second element of your newYearsResolutions array to be, 'Learn a new language'.
+
+let newYearsResolutions  = ['Rappel into a cave', 'Take a falconry class', 'Learn to juggle'];
+console.log(newYearsResolutions);
+
+let listItem = newYearsResolutions[0];
+console.log(listItem);
+console.log(newYearsResolutions[2]);
+console.log(newYearsResolutions[1]='Learn a new language');
+
+
+### ARRAYS
+## length property
+We may wish to know how many items are stored inside of an array.
+
+We can find this out by using one of an array's built-in properties, called length. We can attach this to any variable holding an array and it will return the number of items inside.
+
+let newYearsResolutions = ['Rappel into a cave', 'Take a falconry class'];
+
+console.log(newYearsResolutions.length);
+// Output: 2
+In the example above, we log newYearsResolutions.length to the console. This code retrieves the length property of the newYearsResolutions array and logs it to the console. This array has two items, so 2 would be logged to the console.
+
+Instructions
+1.
+Find the length of your newYearsResolutions array and log it to the console.
+
+let newYearsResolutions  = ['Rappel into a cave', 'Take a falconry class', 'Learn to juggle'];
+console.log(newYearsResolutions);
+
+let listItem = newYearsResolutions[0];
+console.log(listItem);
+console.log(newYearsResolutions[2]);
+console.log(newYearsResolutions[1]='Learn a new language');
+console.log(newYearsResolutions.length); 
+
+### ARRAYS
+## push Method
+JavaScript has built in methods for arrays that help us do common tasks. Let's learn some of them.
+
+First, .push() allows us to add items to the end of an array. Here is an example of how this is used:
+
+let newYearsResolutions = ['item 0', 'item 1', 'item 2'];
+
+newYearsResolutions.push('item 3', 'item 4');
+The method .push() would make the newYearsResolutions array look like:
+
+['item 0', 'item 1', 'item 2', 'item 3', 'item 4'];
+How does .push() work?
+
+It connects to newYearsResolutions with a period.
+
+Then we call it like a function. That's because .push() is a function and one that JavaScript allows us to use right on an array.
+
+Another array method, .pop(), is similar to .push(). This method removes the last item of an array.
+
+let newYearsResolutions = ['item 0', 'item 1', 'item 2'];
+
+newYearsResolutions.pop();
+
+console.log(newYearsResolutions); 
+// Output: [ 'item 0', 'item 1' ]
+In the example above, calling .pop() on the newYearsResolutions array removed item 2 from the end.
+
+Instructions
+1.
+Add two more items to your newYearsResolutions array using .push().
+
+2.
+Now, use console.log to print your newYearsResolutions array to make sure your items were added.
+
+3.
+Use the .pop() method to remove the last element from your array.
+
+Log newYearsResolutions to the console to make sure it worked.
+let newYearsResolutions  = ['Rappel into a cave', 'Take a falconry class', 'Learn to juggle'];
+console.log(newYearsResolutions);
+
+let listItem = newYearsResolutions[0];
+console.log(listItem);
+console.log(newYearsResolutions[2]);
+console.log(newYearsResolutions[1]='Learn a new language');
+console.log(newYearsResolutions.length); 
+newYearsResolutions.push('Item3');
+newYearsResolutions.push('Item4');
+console.log(newYearsResolutions); 
+newYearsResolutions.pop();
+console.log(newYearsResolutions); 
